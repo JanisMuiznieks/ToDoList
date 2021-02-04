@@ -46,7 +46,7 @@ class TodoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         let addAction = UIAlertAction(title: "Add", style: .cancel) { (action: UIAlertAction) in
             let textField = alertController.textFields?.first
 
-            let entity = NSEntityDescription.entity(forEntityName: "ToDo", in: self.context!)
+            let entity = NSEntityDescription.entity(forEntityName: "Todo", in: self.context!)
             let item = NSManagedObject(entity: entity!, insertInto: self.context)
             item.setValue(textField?.text, forKey: "item")
 
@@ -77,7 +77,7 @@ class TodoTableViewController: UIViewController, UITableViewDelegate, UITableVie
         } catch {
             fatalError(error.localizedDescription)
         }
-        //loadData()
+        loadData()
     }
     
     
